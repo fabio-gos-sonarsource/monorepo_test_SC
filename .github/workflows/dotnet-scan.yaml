@@ -56,6 +56,6 @@ jobs:
         shell: powershell
         run: |
           cd .\comp-dotnet
-          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"demo:mono-dotnet" /n:"Monorepo .Net Core" /d:sonar.plugins.downloadOnlyRequired=true /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"demo:mono-dotnet" /n:"Monorepo .Net Core" /d:sonar.plugins.downloadOnlyRequired=true /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /k:"Monorepo_dotnet"
           dotnet build dotnetcore-sample.sln
           ..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
