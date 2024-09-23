@@ -18,8 +18,8 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.organization=fabio-gos-sonarsource-gh
-            -Dsonar.projectKey=fgos_monorepo_python
+            -Dsonar.organization=fgos-sonar-gh-staging
+            -Dsonar.projectKey=monorepo-test-python
             -Dsonar.sources=comp-cli/src
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
