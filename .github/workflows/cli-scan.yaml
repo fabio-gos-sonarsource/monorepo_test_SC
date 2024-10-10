@@ -21,7 +21,7 @@ jobs:
           args: >
             -Dsonar.organization=fabio-gos-sonarsource
             -Dsonar.projectKey=monorepo_python_test_fg
-            -Dsonar.sources=comp-cli/src
+            -Dsonar.sources=comp-cli/.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
