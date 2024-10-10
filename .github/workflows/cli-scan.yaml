@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - new-branch
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -18,9 +19,9 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
-            -Dsonar.organization=fgos-sonar-gh-staging
-            -Dsonar.projectKey=monorepo-test-python
-            -Dsonar.sources=comp-cli/src
+            -Dsonar.organization=fabio-gos-sonarsource
+            -Dsonar.projectKey=monorepo_python_test_fg
+            -Dsonar.sources=comp-cli/.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
