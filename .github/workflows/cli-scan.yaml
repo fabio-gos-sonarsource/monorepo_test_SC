@@ -18,11 +18,11 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          #projectBaseDir: comp-cli/
+          projectBaseDir: comp-cli/
           args: >
             -Dsonar.organization=fabio-gos-sonarsource
             -Dsonar.projectKey=monorepo_python_test_fg
-            -Dsonar.sources=comp-cli/.
+           # -Dsonar.sources=comp-cli/.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
