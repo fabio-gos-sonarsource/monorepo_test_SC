@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - new-branch1
-    paths:
-      - 'comp-cli/**'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -20,6 +18,7 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         with:
+          projectBaseDir: comp-cli/.
           args: >
             -Dsonar.organization=fabio-gos-sonarsource
             -Dsonar.projectKey=monorepo_python_test_fg
